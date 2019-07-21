@@ -13,3 +13,9 @@
 [submodule "pack/all_plugins/start/nerdtree"]
 	path = pack/all_plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule "pack/all_plugins/start/vim-tex-fold"]
+	path = pack/all_plugins/start/vim-tex-fold
+	url = https://github.com/matze/vim-tex-fold
+[submodule "pack/all_plugins/opt/Colorizer"]
+	path = pack/all_plugins/opt/Colorizer
+	url = https://github.com/chrisbra/Colorizer
