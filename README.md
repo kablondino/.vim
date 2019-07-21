@@ -6,11 +6,17 @@ More of these may be added in the future.
 Plugins are managed as git submodules, and they are stored in `./pack/all_plugins/start/` and `./pack/all_plugins/opt/`, in which the ones in `start` load automatically.
 Any plugins in `opt` need the `:packadd` command invoked in a vim session.
 
+
 ## Install
 Only one step must be invoked to install this: linking the `.vimrc` file to the home directory.
 ```
 ln -s .vimrc ~/.vimrc
 ```
+
+However, one other package will be necessary for the proper display of characters.
+[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) is used extensively by the lightline and lightline-bufferline plugins.
+Be sure to install one of the fonts of your choice.
+
 
 ## External link
 A good guide for how these work can be found at this [link](https://begriffs.com/posts/2019-07-19-history-use-vim.html?hn=3) in the "Third-party plugins".
