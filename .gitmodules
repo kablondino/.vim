@@ -11,7 +11,7 @@
 	path = pack/all_plugins/start/vim-markdown-folding
 	url = https://github.com/masukomi/vim-markdown-folding
 [submodule "pack/all_plugins/start/nerdtree"]
-	path = pack/all_plugins/start/nerdtree
+	path = pack/all_plugins/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "pack/all_plugins/start/vim-tex-fold"]
 	path = pack/all_plugins/start/vim-tex-fold
