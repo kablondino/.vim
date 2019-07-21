@@ -13,43 +13,8 @@
 "    ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝                          
 
 
-set nocompatible					" be iMproved, required
-filetype off						" required
-
-
-"============================= DEPRICATED ====================================
-" VUNDLE SETUP START
-"set rtp+=~/.vim/bundle/Vundle.vim	" Default path
-"call vundle#begin()
-"" Alternatively, pass a path where Vundle should install plugins
-""call vundle#begin('~/some/path/here')
-"
-"" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-"
-"Plugin 'itchyny/lightline.vim'
-"Plugin 'mgee/lightline-bufferline'
-"Plugin 'ryanoasis/vim-devicons'		" REQUIRES Nerd Font
-"
-"Plugin 'chrisbra/Colorizer'
-"
-"Plugin 'Konfekt/FastFold'			" Unchecked with other folding plugins!
-"Plugin 'nelstrom/vim-markdown-folding'
-"Plugin 'matze/vim-tex-fold'
-"Plugin 'tmhedberg/SimpylFold'
-"Plugin 'mboughaba/i3config.vim'
-"
-"Plugin 'scrooloose/nerdtree'
-""Plugin 'tpope/vim-fugitive'
-"
-""Plugin 'severin-lemaignan/vim-minimap'
-"
-"" All of your Plugins must be added before the following line
-"call vundle#end()					" required
-" VUNDLE SETUP END
-" ============================================================================
-
-filetype plugin indent on			" required
+set nocompatible  " Forces VIM, and not vi
+filetype plugin indent on
 
 set showcmd
 set showfulltag
@@ -160,8 +125,8 @@ let g:lightline.separator = { 'left': '', 'right': '' }	" U+E0B0 - E0C7
 let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 
-set hidden						" Allows buffer switching without saving
-set showtabline=2 laststatus=2	" Always show tabs and last status
+set hidden  " Allows buffer switching without saving
+set showtabline=2 laststatus=2  " Always show tabs and last status
 
 set lazyredraw ttyfast
 
@@ -174,8 +139,8 @@ set backspace=1
 " Set the cursorline and cursorcolumn
 set cursorline colorcolumn=80
 
-set showmatch					" Show matching parenthesis, etc.
-set mouse=a						" Mouse is usable
+set showmatch  " Show matching parenthesis, etc.
+set mouse=a  " Mouse is usable
 
 " Better way of showing syntax
 if !exists("g:syntax_on")
@@ -189,11 +154,9 @@ set incsearch ignorecase smartcase
 " Hit F3 to unhighlight searched term
 nnoremap <silent><F3> :noh<return>
 
-" Colorizer Toggle
+" Colorizer Toggle, REQUIRES Colorizer to be loaded!
 nnoremap <silent><F4> :ColorToggle<return>
 
-" Minimap Toggle
-"let g:minimap_toggle='<F5>'
 
 " Line number configurations
 set number
@@ -257,14 +220,4 @@ let g:tex_fold_additional_envs = ['sageblock', 'sagesilent']
 " Turn off line cursor and turn on spell check, linebreak for markdown
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ linebreak nocursorline nocursorcolumn
-
-" Autocomplete pairing of braces and parentheses
-"inoremap {      {}<Left>
-"inoremap {<CR>  {<CR>}<Esc>O
-"inoremap {{     {
-"inoremap {}     {}
-"inoremap (      ()<Left>
-"inoremap (<CR>  (<CR>)<Esc>0
-"inoremap ((     (
-"inoremap ()     ()
 
