@@ -1,0 +1,15 @@
+[submodule "pack/all_plugins/start/lightline.vim"]
+	path = pack/all_plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/all_plugins/start/lightline-bufferline"]
+	path = pack/all_plugins/start/lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline
+[submodule "pack/all_plugins/start/vim-devicons"]
+	path = pack/all_plugins/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "pack/all_plugins/start/vim-markdown-folding"]
+	path = pack/all_plugins/start/vim-markdown-folding
+	url = https://github.com/masukomi/vim-markdown-folding
+[submodule "pack/all_plugins/start/nerdtree"]
+	path = pack/all_plugins/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
