@@ -1,6 +1,7 @@
 # Vim files
 This repository tracks and applies the different plugins and custom files for my configuration.
-These include the color scheme `swagdino.vim` and the Python and TeX files.
+These include the color scheme `swagdino.vim` and behavior in Python and TeX files, such as tab autoindent, etc.
+More of these may be added in the future.
 
 Plugins are managed as git submodules.
 Plugins are stored in `./pack/all_plugins/start/` and `./pack/all_plugins/opt/`, in which the ones in `start` load automatically.
@@ -9,7 +10,7 @@ Any plugins in `opt` need the `:packadd` command invoked in a vim session.
 ## Install
 Only one step must be invoked to install this: linking the `.vimrc` file to the home directory.
 ```
-	ln -s .vimrc ~/.vimrc
+ln -s .vimrc ~/.vimrc
 ```
 
 ## External link
