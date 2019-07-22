@@ -206,6 +206,9 @@ autocmd BufNewFile,BufRead *.feature setlocal expandtab
 " Toggle Vim's default python behavior
 let g:python_recommended_style = 1
 
+" Python folding from SimpylFold, set preview for docstring
+let g:SimpylFold_docstring_preview = 1
+
 " LaTeX Fold customization
 let g:tex_fold_sec_char='§'
 let g:tex_fold_env_char='ﲖ'
