@@ -140,7 +140,7 @@ set backspace=1
 set cursorline colorcolumn=80
 
 set showmatch  " Show matching parenthesis, etc.
-set mouse=a  " Mouse is usable
+set mouse=nv  " Mouse is usable only in Normal and Visual mode
 
 " Better way of showing syntax
 if !exists("g:syntax_on")
