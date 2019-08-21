@@ -35,6 +35,7 @@ colorscheme swagdino
 "autocmd BufRead,BufNewFile * syn match MyOperators /[\+\-\=\/]/ 
 "			\| hi MyOperators guifg=#ffafff ctermfg=219
 
+
 " ---------------------------------------------------------------------------
 "  Status Line Configuration with Lightline and Lightline-Buffer
 " ---------------------------------------------------------------------------
@@ -109,6 +110,13 @@ let g:lightline#bufferline#number_map = {
 \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
 \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 
+let g:lightline.separator = { 'left': '', 'right': '' }	" U+E0B0 - E0C7
+let g:lightline.subseparator = { 'left': '', 'right': '' }
+
+" ------------------------- End Lightline ------------------------------------
+
+
+" ------------------------- Alias and such -----------------------------------
 " REMAP ARROW KEYS! to switch between buffers
 nnoremap <Left> :bprev<return>
 nnoremap <Right> :bnext<return>
@@ -116,13 +124,18 @@ nnoremap <Right> :bnext<return>
 " Delete buffer but NOT the split
 cabbrev BD bn\|bd #
 
-" Set W (capital w), and ẅ (w with diaeresis) to also write
+" ALIAS! Set W (capital w), and ẅ (w with diaeresis) to also write
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> ẅ ((getcmdtype() is# ':' && getcmdline() is# 'ẅ')?('w'):('ẅ'))
 cnoreabbrev <expr> Ẅ ((getcmdtype() is# ':' && getcmdline() is# 'Ẅ')?('w'):('Ẅ'))
 
-let g:lightline.separator = { 'left': '', 'right': '' }	" U+E0B0 - E0C7
-let g:lightline.subseparator = { 'left': '', 'right': '' }
+
+" Aliases for C, C++, and Fortran compiling, with no extra options sans -Wall
+cabbrev C_compile !clear && gcc -Wall % -o %:r_c -lm
+cabbrev Cpp_compile !clear && g++ -Wall % -o %:r_cpp -lm
+cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
+cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
+cabbrev octave_run !clear && octave -qf "run('%');"
 
 
 set hidden  " Allows buffer switching without saving
@@ -147,6 +160,8 @@ if !exists("g:syntax_on")
 	syntax enable
 endif
 
+set encoding=utf-8 fileencoding=utf-8
+
 set t_ZH=[3m t_ZR=[23m
 
 " Searching things
@@ -165,14 +180,6 @@ autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 
 
-" Aliases for C, C++, and Fortran compiling, with no extra options sans -Wall
-cabbrev C_compile !clear && gcc -Wall % -o %:r_c -lm
-cabbrev Cpp_compile !clear && g++ -Wall % -o %:r_cpp -lm
-cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
-cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
-cabbrev octave_run !clear && octave -qf "run('%');"
-
-
 " Toggle RELATIVE line numbers on and off with Ctrl-L (upper or lower case)
 function! g:NumberToggle()
 	if &relativenumber == 0
@@ -182,8 +189,6 @@ function! g:NumberToggle()
 	endif
 endfunction
 nnoremap <silent><C-L> :call g:NumberToggle()<return>
-
-set encoding=utf-8 fileencoding=utf-8
 
 " Sets list characters (\t, \n, etc.)
 set list
@@ -199,9 +204,11 @@ endif
 " ¬ (The not symbol) U+00AC
 " ↪ U+21AA, ↳ U+21B3
 
+" ------------------------- File Type Specifics ------------------------------
 " Syntax for odd file types
 autocmd BufNewFile,BufRead *.sage,*.spyx,*.pyx set filetype=python
 autocmd BufNewFile,BufRead *.feature setlocal expandtab
+autocmd BufNewFile,BufRead *.rasi set filetype=css
 
 " Toggle Vim's default python behavior
 let g:python_recommended_style = 1
