@@ -39,7 +39,7 @@ colorscheme swagdino
 " ---------------------------------------------------------------------------
 "  Status Line Configuration with Lightline and Lightline-Buffer
 " ---------------------------------------------------------------------------
-set noshowmode	" Removes duplicate info on the command line
+set noshowmode  " Removes duplicate info on the command line
 let g:lightline = {
 	\ 'colorscheme': 'deus',
 	\ 'tabline': {
@@ -145,8 +145,9 @@ set lazyredraw ttyfast
 
 " Tab control
 set tabstop=4 shiftwidth=4
+
 " Backspace by default does NOT delete already-written text.
-" backspace=2 changes this to a more default manner
+" backspace=2 changes this to a more-default manner
 set backspace=1
 
 " Set the cursorline and cursorcolumn
