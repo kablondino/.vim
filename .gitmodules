@@ -25,3 +25,6 @@
 [submodule "pack/all_plugins/start/SimpylFold"]
 	path = pack/all_plugins/start/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "pack/all_plugins/start/vim-gitgutter"]
+	path = pack/all_plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter

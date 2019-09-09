@@ -115,6 +115,12 @@ let g:lightline.subseparator = { 'left': "\uE0BF", 'right': "\uE0BF" }
 
 " ------------------------- End Lightline ------------------------------------
 
+" ------------------------- Git Gutter ---------------------------------------
+"let g:gitgutter_override_sign_column_highlight = 0
+"highlight SignColumn ctermbg=10
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
 
 " ------------------------- Alias and such -----------------------------------
 " REMAP ARROW KEYS! to switch between buffers
