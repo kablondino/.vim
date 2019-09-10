@@ -7,9 +7,6 @@
 [submodule "pack/all_plugins/start/vim-devicons"]
 	path = pack/all_plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
-[submodule "pack/all_plugins/start/vim-markdown-folding"]
-	path = pack/all_plugins/start/vim-markdown-folding
-	url = https://github.com/masukomi/vim-markdown-folding
 [submodule "pack/all_plugins/start/nerdtree"]
 	path = pack/all_plugins/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
