@@ -201,7 +201,7 @@ nnoremap <silent><C-L> :call g:NumberToggle()<return>
 set list
 let &showbreak = " \u21B3 "
 if has('multi_byte') && &encoding ==# 'utf-8'
-	let &listchars = "tab:\u25B8\u00B7,trail:\u00B7,eol:\u00AC,extends:\uE0C6,precedes:\uE0C7,nbsp:\u00B1"
+	let &listchars = "tab:\uE621\u00B7,trail:\u00B7,eol:\u00AC,extends:\uE0C6,precedes:\uE0C7,nbsp:\u00B1"
 else
 	let &listchars = 'tab:> ,trail:.,eol:|,extends:>,precedes:<,nbsp%'
 endif
