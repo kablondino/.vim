@@ -7,7 +7,7 @@
 [submodule "pack/all_plugins/start/vim-devicons"]
 	path = pack/all_plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
-[submodule "pack/all_plugins/start/nerdtree"]
+[submodule "pack/all_plugins/opt/nerdtree"]
 	path = pack/all_plugins/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "pack/all_plugins/start/vim-tex-fold"]
@@ -16,7 +16,7 @@
 [submodule "pack/all_plugins/opt/Colorizer"]
 	path = pack/all_plugins/opt/Colorizer
 	url = https://github.com/chrisbra/Colorizer
-[submodule "pack/all_plugins/start/julia-vim"]
+[submodule "pack/all_plugins/opt/julia-vim"]
 	path = pack/all_plugins/opt/julia-vim
 	url = https://github.com/JuliaEditorSupport/julia-vim
 [submodule "pack/all_plugins/start/SimpylFold"]
