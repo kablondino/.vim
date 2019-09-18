@@ -34,8 +34,9 @@ set t_ZH=[3m t_ZR=[23m
 " ------------------------- Visual Things ------------------------------------
 set hidden  " Allows buffer switching without saving
 set showtabline=2 laststatus=2  " Always show tabs and last status
-set cursorline colorcolumn=80  " Set the cursorline and cursorcolumn
+set colorcolumn=80  " Set the cursorline and cursorcolumn
 set lazyredraw ttyfast showcmd showfulltag
+set regexpengine=1
 set showmatch  " Show matching parenthesis, etc.
 set incsearch ignorecase smartcase  " Searching things
 
@@ -99,4 +100,7 @@ autocmd BufNewFile,BufRead *.rasi set filetype=css
 " Turn off line cursor and turn on spell check, linebreak for markdown
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ linebreak nocursorline nocursorcolumn
+
+" ========================= WORK SETTINGS ====================================
+au BufRead,BufNewFile,BufEnter ~/VCP/*.sh setlocal tabstop=2 shiftwidth=2 expandtab
 
