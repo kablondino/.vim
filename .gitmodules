@@ -7,7 +7,7 @@
 [submodule "pack/all_plugins/start/vim-devicons"]
 	path = pack/all_plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
-[submodule "pack/all_plugins/opt/nerdtree"]
+[submodule "pack/all_plugins/start/nerdtree"]
 	path = pack/all_plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "pack/all_plugins/start/vim-tex-fold"]
