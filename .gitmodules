@@ -1,9 +1,3 @@
-[submodule "pack/all_plugins/start/lightline.vim"]
-	path = pack/all_plugins/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
-[submodule "pack/all_plugins/start/lightline-bufferline"]
-	path = pack/all_plugins/start/lightline-bufferline
-	url = https://github.com/mengelbrecht/lightline-bufferline
 [submodule "pack/all_plugins/start/vim-devicons"]
 	path = pack/all_plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
@@ -31,3 +25,6 @@
 [submodule "pack/all_plugins/start/vim-fugitive"]
 	path = pack/all_plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/all_plugins/start/vim-crystalline"]
+	path = pack/all_plugins/start/vim-crystalline
+	url = https://github.com/rbong/vim-crystalline.git
