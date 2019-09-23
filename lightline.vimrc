@@ -11,7 +11,7 @@ let g:lightline = {
 	\
 	\ 'active': {
 	\	'left': [ [ 'mode', 'paste', 'spell' ], [ 'readonly',
-	\			'modified', 'filename' ], [ 'char_hex_value' ] ],
+	\			'modified', 'fugitive', 'filename' ], [ 'char_hex_value' ] ],
 	\	'right': [ [ 'lineinfo' ], [ 'percent' ],
 	\			[ 'fileencoding', 'filetype' ] ],
 	\ },
@@ -43,6 +43,7 @@ let g:lightline = {
 	\		'bufferinfo': 'lightline#buffer#bufferinfo',
 	\		'readonly': 'LightlineReadonly',
 	\		'modified': 'LightlineModified',
+	\		'fugitive': 'LightlineFugitive'
 	\ }, }
 function! MyFiletype()
 	return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . 
@@ -58,6 +59,14 @@ function! LightlineReadonly()  " For the status line
 endfunction
 function! LightlineModified()
 	return &modifiable && &modified ? "\uE240 \uF00D" : "\uE240 \uF00C"
+endfunction
+
+function! LightlineFugitive()
+	if &ft !~? 'vimfiler' && exists('*fugitive#head')
+		let branch = fugitive#head()
+		return branch !=# '' ? ' '.branch : ''
+	endif
+	return ''
 endfunction
 
 let g:lightline#bufferline#enable_devicons = 1
