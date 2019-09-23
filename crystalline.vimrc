@@ -1,3 +1,4 @@
+" Custom functions for icons
 function! MyFiletype()
 	return winwidth(0) > 70 ? (strlen(&filetype) ?
 		\ WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft') : ''
@@ -17,45 +18,49 @@ endfunction
 function! MyFugitive()
 	if &ft !~? 'vimfiler' && exists('*fugitive#head')
 		let branch = fugitive#head()
-		return branch !=# '' ? ' '.branch : ''
+		return branch !=# '' ? "\uE0A0 ".branch : ''
 	endif
 	return ''
 endfunction
 
 
 function! StatusLine(current, width)
-	let l:my_status = ''  " Placeholder variable for the status
-
 	" Print the mode and a separator
-	let l:my_status .= crystalline#mode() . crystalline#right_mode_sep('Fill')
+	let l:my_status = crystalline#mode() . crystalline#right_mode_sep('Fill')
 
-	" Add in the left status (read-only, modified, filename, char value)
-	let l:my_status .= ' ' . ReadOnlySymobol() . ' ' . ModifiedSymbol() . ' '
-	let l:my_status .= crystalline#right_sep('Fill', 'Fill') . ' ' . MyFugitive()
-	let l:my_status .= crystalline#right_mode_sep('') . '%f 0x%B'
+	" Add in the left status: read-only, modified
+	let l:my_status .= ' ' . ReadOnlySymobol() . " \uE0BF " . ModifiedSymbol()
+	" Fugitive branch
+	let l:my_status .= " " . crystalline#left_sep('VisualMode', 'Fill')
+			\. MyFugitive() . crystalline#right_sep('VisualMode', 'Fill')
+	" filename
+	let l:my_status .= " %f" . crystalline#left_sep('', 'Fill')
+	" char value
+	let l:my_status .= " 0x%B"
 
 	" Go to the right side, print percentage
-	let l:my_status .= '%=' . crystalline#left_sep('Fill', '') . '%P'
-	" Separator, plus line info
-	let l:my_status .= crystalline#left_sep('Fill', '') . '%2l │ %-2v '
+	let l:my_status .= '%=' . MyFiletype() . " \uE0B9 "
 	" Separator, plus file info
-	let l:my_status .= crystalline#left_mode_sep('') . MyFileformat() . '│'
-	let l:my_status .= MyFiletype()
+	let l:my_status .= "%P" . crystalline#left_mode_sep('')
+	" Separator, plus line info
+	let l:my_status .= " \uE0A1%2l\u2502 \uE0A3%-2v "
 
 	return l:my_status
 endfunction
 
 
 function! TabLine()
-  let l:vimlabel = has('nvim') ?  ' NVIM ' : ' VIM '
-  return crystalline#bufferline(2, len(l:vimlabel), 1) . '%=%#CrystallineTab# ' . l:vimlabel
+	return crystalline#bufferline(0, 0, 1) . crystalline#left_sep('', 'Fill')
+			\. WebDevIconsGetFileTypeSymbol()
 endfunction
 
 
-let g:crystalline_enable_sep = 1
+" Separator things
+let g:crystalline_enable_sep = 1  "        
+let g:crystalline_tab_separator = "\uE0B9"
+let g:crystalline_separators = [ "", "" ]
+
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_tabline_fn = 'TabLine'
 let g:crystalline_theme = 'onedark'
-
-set tabline=%!crystalline#bufferline()
 
