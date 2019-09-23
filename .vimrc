@@ -32,8 +32,11 @@ set t_ZH=[3m t_ZR=[23m
 
 
 " ------------------------- Visual Things ------------------------------------
+source $HOME/.vim/crystalline.vimrc  " Load crystalline configuration
+
 set hidden  " Allows buffer switching without saving
 set showtabline=2 laststatus=2  " Always show tabs and last status
+set noshowmode  " Removes duplicate info on the command line
 set colorcolumn=80  " Set the cursorline and cursorcolumn
 set lazyredraw ttyfast showcmd showfulltag
 set regexpengine=1
@@ -66,11 +69,6 @@ endif
 " ¬ (The not symbol) U+00AC
 " ↪ U+21AA, ↳ U+21B3
 
-
-" ----------------------------------------------------------------------------
-"  Status Line Configuration with Lightline and Lightline-Buffer
-" ----------------------------------------------------------------------------
-source $HOME/.vim/lightline.vimrc
 
 
 " ------------------------- Alias and such -----------------------------------
