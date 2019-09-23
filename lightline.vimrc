@@ -33,7 +33,7 @@ let g:lightline = {
 	\ 'component': {
 	\		'char_hex_value': '0x%B',
 	\		'filename': '%t',
-	\		'lineinfo': "\uE0A1%3l|\uE0A3%-2v",
+	\		'lineinfo': "\uE0A1%2l│\uE0A3%-2v",
 	\		'buff_separator': '',
 	\		'big_separator': '      ',
 	\ },
