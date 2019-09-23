@@ -51,8 +51,8 @@ endif
 " Line number configurations
 set number
 " Set numbers on losing and gaining window focus
-autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+"autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 
 " Sets list characters (\t, \n, etc.)
 set list

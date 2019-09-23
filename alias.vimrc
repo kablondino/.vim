@@ -24,7 +24,7 @@ nnoremap <silent><F3> :noh<return>
 " Colorizer Toggle, REQUIRES Colorizer to be loaded!
 nnoremap <silent><F4> :ColorToggle<return>
 
-" Toggle RELATIVE line numbers on and off with Ctrl-L (upper or lower case)
+" Toggle RELATIVE line numbers on and off with Ctrl-K (upper or lower case)
 function! g:NumberToggle()
 	if &relativenumber == 0
 		set relativenumber
@@ -32,5 +32,5 @@ function! g:NumberToggle()
 		set norelativenumber
 	endif
 endfunction
-nnoremap <silent><C-L> :call g:NumberToggle()<return>
+nnoremap <silent><C-K> :call g:NumberToggle()<return>
 
