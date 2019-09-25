@@ -31,8 +31,8 @@ function! StatusLine(current, width)
 	" Add in the left status: read-only, modified
 	let l:my_status .= ' ' . ReadOnlySymobol() . " \uE0BF " . ModifiedSymbol()
 	" Fugitive branch
-	let l:my_status .= " " . crystalline#left_sep('VisualMode', 'Fill')
-			\. MyFugitive() . crystalline#right_sep('VisualMode', 'Fill')
+	let l:my_status .= " " . crystalline#left_sep('NormalMode', 'Fill')
+			\. MyFugitive() . crystalline#right_sep('NormalMode', 'Fill')
 	" filename
 	let l:my_status .= " %f" . crystalline#left_sep('', 'Fill')
 	" char value
