@@ -18,7 +18,7 @@ endfunction
 function! MyFugitive()
 	if &ft !~? 'vimfiler' && exists('*fugitive#head')
 		let branch = fugitive#head()
-		return branch !=# '' ? "\uE0A0 ".branch : ''
+		return (branch !=# '' ? "\uE0A0 ".branch : '')[:24]
 	endif
 	return ''
 endfunction
