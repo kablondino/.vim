@@ -49,9 +49,16 @@ function! StatusLine(current, width)
 endfunction
 
 
+function! TabLabel(buf, max_width) abort
+	let [l:left, l:name, l:short_name, l:right] =
+				\ crystalline#default_tablabel_parts(a:buf, a:max_width)
+	return l:left . l:short_name . ' ' . WebDevIconsGetFileTypeSymbol(l:name)
+				\. (l:right ==# ' ' ? '' : ' ') . l:right
+endfunction
+
 function! TabLine()
-	return crystalline#bufferline(0, 0, 1) . crystalline#left_sep('', 'Fill')
-			\. WebDevIconsGetFileTypeSymbol()
+	return crystalline#bufferline(0, 0, 1, 1, 'TabLabel',
+				\ crystalline#default_tabwidth() + 3)
 endfunction
 
 
