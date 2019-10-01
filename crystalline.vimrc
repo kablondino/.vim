@@ -29,17 +29,19 @@ function! StatusLine(current, width)
 	let l:my_status = crystalline#mode() . crystalline#right_mode_sep('Fill')
 
 	" Add in the left status: read-only, modified
-	let l:my_status .= ' ' . ReadOnlySymobol() . " \uE0BF " . ModifiedSymbol()
+	let l:my_status .= ' ' . ReadOnlySymobol() . g:left_subseparator
 	" Fugitive branch
-	let l:my_status .= " " . crystalline#left_sep('NormalMode', 'Fill')
-			\. MyFugitive() . crystalline#right_sep('NormalMode', 'Fill')
+	let l:my_status .= ModifiedSymbol() . " "
+	let l:my_status .= crystalline#left_sep('NormalMode', 'Fill')
+	let l:my_status .= MyFugitive()
+	let l:my_status .= crystalline#right_sep('NormalMode', 'Fill')
 	" filename
 	let l:my_status .= " %f" . crystalline#left_sep('', 'Fill')
 	" char value
 	let l:my_status .= " 0x%B"
 
 	" Go to the right side, print percentage
-	let l:my_status .= '%=' . MyFiletype() . " \uE0B9 "
+	let l:my_status .= '%=' . MyFiletype() . g:right_subseparator
 	" Separator, plus file info
 	let l:my_status .= "%P" . crystalline#left_mode_sep('')
 	" Separator, plus line info
@@ -64,8 +66,10 @@ endfunction
 
 " Separator things
 let g:crystalline_enable_sep = 1  "        
-let g:crystalline_tab_separator = "\uE0B9"
-let g:crystalline_separators = [ "", "" ]
+let g:crystalline_tab_separator = "\uE0B5"
+let g:left_subseparator = " \uE0B5 "
+let g:right_subseparator = " \uE0B7 "
+let g:crystalline_separators = [ "\uE0B4", "\uE0B6" ]
 
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_tabline_fn = 'TabLine'
