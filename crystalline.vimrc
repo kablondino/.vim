@@ -41,7 +41,7 @@ function! StatusLine(current, width)
 	let l:my_status .= " 0x%B"
 
 	" Go to the right side, print percentage
-	let l:my_status .= '%=' . MyFiletype() . g:right_subseparator
+	let l:my_status .= '%= ' . MyFiletype() . g:right_subseparator
 	" Separator, plus file info
 	let l:my_status .= "%P " . crystalline#left_mode_sep('')
 	" Separator, plus line info
