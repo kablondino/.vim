@@ -66,10 +66,10 @@ endfunction
 
 " Separator things
 let g:crystalline_enable_sep = 1  "        
-let g:crystalline_tab_separator = "\uE0B5"
-let g:left_subseparator = " \uE0B5 "
-let g:right_subseparator = " \uE0B7 "
-let g:crystalline_separators = [ "\uE0B4", "\uE0B6" ]
+let g:crystalline_tab_separator = "\uE0B1"
+let g:left_subseparator = " \uE0B1 "
+let g:right_subseparator = " \uE0B3 "
+let g:crystalline_separators = [ "\uE0B0", "\uE0B2" ]
 
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_tabline_fn = 'TabLine'
