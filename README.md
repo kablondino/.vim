@@ -26,7 +26,8 @@ Note that some distributions (or something unknown to me) won't properly read sy
 This means you could either make a hard link, by running the above command without the `-s` option, or simply copy the `.vimrc` file.
 
 Be aware, one other piece of software will be necessary for the proper display of characters.
-[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) is used extensively by the lightline and lightline-bufferline plugins.
+[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) is used extensively by the ~~lightline and lightline-bufferline~~ crystalline plugin~~s~~.
+(I have removed lightline in favor of [crystalline](https://github.com/rbong/vim-crystalline)).
 Be sure to install one of the fonts of your choice from their selection.
 
 
