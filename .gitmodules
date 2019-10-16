@@ -26,5 +26,11 @@
 	path = pack/all_plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/all_plugins/start/vim-crystalline"]
-	path = pack/all_plugins/start/vim-crystalline
+	path = pack/all_plugins/opt/vim-crystalline
 	url = https://github.com/rbong/vim-crystalline.git
+[submodule "pack/all_plugins/opt/lightline.vim"]
+	path = pack/all_plugins/opt/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/all_plugins/opt/lightline-bufferline"]
+	path = pack/all_plugins/opt/lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline

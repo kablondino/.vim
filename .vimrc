@@ -32,7 +32,17 @@ set t_ZH=[3m t_ZR=[23m
 
 
 " ------------------------- Visual Things ------------------------------------
-source $HOME/.vim/crystalline.vimrc  " Load crystalline configuration
+" Choose one!
+let line_choice = "lightline"
+
+if line_choice == "lightline"
+	packadd! lightline.vim
+	packadd! lightline-bufferline
+	source $HOME/.vim/lightline.vimrc
+else  " Defaults to vim-crystalline
+	packadd! vim-crystalline
+	source $HOME/.vim/crystalline.vimrc
+endif
 
 set hidden  " Allows buffer switching without saving
 set showtabline=2 laststatus=2  " Always show tabs and last status
