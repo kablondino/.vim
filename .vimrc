@@ -23,7 +23,7 @@ set modelines=0 nomodeline
 " Backspace by default does NOT delete already-written text.
 " backspace=2 changes this to a more-default manner
 set backspace=1
-set tabstop=4 shiftwidth=4  " Tab control
+set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab  " Tab control
 set timeoutlen=50 ttimeoutlen=0  " Nearly no mapping/key code delays
 
 set mouse=nv  " Mouse is usable only in Normal and Visual mode
