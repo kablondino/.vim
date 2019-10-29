@@ -34,3 +34,6 @@
 [submodule "pack/all_plugins/opt/lightline-bufferline"]
 	path = pack/all_plugins/opt/lightline-bufferline
 	url = https://github.com/mengelbrecht/lightline-bufferline
+[submodule "pack/all_plugins/opt/Vim-Jinja2-Syntax"]
+	path = pack/all_plugins/opt/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
