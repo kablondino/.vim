@@ -81,7 +81,6 @@ endif
 " ↪ U+21AA, ↳ U+21B3
 
 
-
 " ------------------------- Alias and such -----------------------------------
 source $HOME/.vim/alias.vimrc
 
@@ -109,7 +108,4 @@ autocmd BufNewFile,BufRead *.rasi set filetype=css
 " Turn off line cursor and turn on spell check, linebreak for markdown
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ linebreak nocursorline nocursorcolumn
-
-" ========================= WORK SETTINGS ====================================
-au BufRead,BufNewFile,BufEnter ~/VCP/*.sh setlocal tabstop=2 shiftwidth=2 expandtab
 
