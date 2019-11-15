@@ -1,6 +1,10 @@
-" REMAP ARROW KEYS! to switch between buffers
+" REMAP ARROW KEYS! to switch between buffers and tabs
 nnoremap <Left> :bprev<return>
 nnoremap <Right> :bnext<return>
+nnoremap <S-Left> :tabprevious<return> 
+nnoremap <S-Right> :tabnext<return>    
+" Can also use gT or <C-PageUp> and gt or <C-PageDown> for next and previous
+" tabs, respectively
 
 " Delete buffer but NOT the split
 cabbrev BD bn\|bd #
