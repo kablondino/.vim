@@ -53,6 +53,7 @@ set lazyredraw ttyfast showcmd showfulltag
 set regexpengine=1
 set showmatch  " Show matching parenthesis, etc.
 set incsearch ignorecase smartcase  " Searching things
+set foldenable foldmethod=indent
 
 set bg=dark
 colorscheme swagdino

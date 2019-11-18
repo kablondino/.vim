@@ -1,8 +1,8 @@
 " REMAP ARROW KEYS! to switch between buffers and tabs
 nnoremap <Left> :bprev<return>
 nnoremap <Right> :bnext<return>
-nnoremap <S-Left> :tabprevious<return> 
-nnoremap <S-Right> :tabnext<return>    
+nnoremap <S-Left> :tabprevious<return>
+nnoremap <S-Right> :tabnext<return>
 " Can also use gT or <C-PageUp> and gt or <C-PageDown> for next and previous
 " tabs, respectively
 
@@ -37,4 +37,14 @@ function! g:NumberToggle()
 	endif
 endfunction
 nnoremap <silent><C-K> :call g:NumberToggle()<return>
+
+" Toggle fold column appearence with <C-H> (for now)
+function! g:FoldColumnToggle()
+	if &foldcolumn == 0
+		setlocal foldcolumn=3
+	else
+		setlocal foldcolumn=0
+	endif
+endfunction
+nnoremap <silent><C-H> :call g:FoldColumnToggle()<return>
 
