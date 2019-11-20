@@ -13,9 +13,6 @@
 [submodule "pack/all_plugins/opt/julia-vim"]
 	path = pack/all_plugins/opt/julia-vim
 	url = https://github.com/JuliaEditorSupport/julia-vim
-[submodule "pack/all_plugins/start/SimpylFold"]
-	path = pack/all_plugins/start/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
 [submodule "pack/all_plugins/start/vim-markdown"]
 	path = pack/all_plugins/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
