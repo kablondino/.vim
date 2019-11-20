@@ -9,7 +9,7 @@ let g:lightline = {
 	\ 'tabline_subseparator': { 'left': "\uE0BD", 'right': "\uE0BD"},
 	\
 	\ 'active': {
-	\	'left': [ ['mode', 'paste', 'spell'],
+	\	'left': [ ['mode', 'spell'],
 	\			['readonly', 'modified', 'fugitive', 'filename'],
 	\			['char_hex_value'] ],
 	\	'right': [ ['lineinfo'], ['percent'],
