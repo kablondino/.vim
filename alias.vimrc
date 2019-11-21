@@ -46,10 +46,10 @@ function! g:FoldToggle()
 		setlocal foldcolumn=0
 	endif
 
-	" Toggle method indent to marker
+	" Toggle method indent from manual to indent to syntax and back
 	if &foldmethod == 'syntax'
-		setlocal foldmethod=marker
-	elseif &foldmethod == 'marker'
+		setlocal foldmethod=manual
+	elseif &foldmethod == 'manual'
 		setlocal foldmethod=indent
 	elseif &foldmethod == 'indent'
 		setlocal foldmethod=syntax
