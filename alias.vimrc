@@ -39,12 +39,21 @@ endfunction
 nnoremap <silent><C-K> :call g:NumberToggle()<return>
 
 " Toggle fold column appearence with <C-H> (for now)
-function! g:FoldColumnToggle()
-	if &foldcolumn == 0
+function! g:FoldToggle()
+	if &foldcolumn == 0 && &foldmethod == 'indent'
 		setlocal foldcolumn=3
 	else
 		setlocal foldcolumn=0
 	endif
+
+	" Toggle method indent to marker
+	if &foldmethod == 'syntax'
+		setlocal foldmethod=marker
+	elseif &foldmethod == 'marker'
+		setlocal foldmethod=indent
+	elseif &foldmethod == 'indent'
+		setlocal foldmethod=syntax
+	endif
 endfunction
-nnoremap <silent><C-H> :call g:FoldColumnToggle()<return>
+nnoremap <silent><C-H> :call g:FoldToggle()<return>
 
