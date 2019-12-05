@@ -47,12 +47,10 @@ function! g:FoldToggle()
 	endif
 
 	" Toggle method indent from manual to indent to syntax and back
-	if &foldmethod == 'syntax'
-		setlocal foldmethod=manual
-	elseif &foldmethod == 'manual'
+	if &foldmethod == 'manual'
 		setlocal foldmethod=indent
 	elseif &foldmethod == 'indent'
-		setlocal foldmethod=syntax
+		setlocal foldmethod=manual
 	endif
 endfunction
 nnoremap <silent><C-H> :call g:FoldToggle()<return>
