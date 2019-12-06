@@ -110,3 +110,9 @@ autocmd BufNewFile,BufRead *.rasi set filetype=css
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ linebreak nocursorline nocursorcolumn
 
+" Julia loading
+autocmd BufReadPre,BufFilePre *.jl :packadd julia-vim && set syn=julia
+
+" Jinja loading
+autocmd BufReadPre,BufFilePre *.jinja :packadd Vim-Jinja2-Syntax
+
