@@ -10,7 +10,7 @@ let g:lightline = {
 	\
 	\ 'active': {
 	\	'left': [ ['mode', 'spell'],
-	\			['readonly', 'modified', 'fugitive', 'filename'],
+	\			['readonly', 'modified', 'gitbranch', 'filename'],
 	\			['char_hex_value'] ],
 	\	'right': [ ['lineinfo'], ['percent'],
 	\			['fileformat', 'fileencoding', 'filetype'] ],
@@ -18,7 +18,7 @@ let g:lightline = {
 	\
 	\ 'inactive': {
 	\	'left': [ ['big_separator'],
-	\			['readonly', 'modified', 'fugitive', 'filename'] ],
+	\			['readonly', 'modified', 'gitbranch', 'filename'] ],
 	\	'right': [ ['lineinfo'], ['percent'],
 	\			['fileformat', 'fileencoding', 'filetype'] ],
 	\ },
@@ -39,15 +39,14 @@ let g:lightline = {
 	\		'bufferinfo': 'lightline#buffer#bufferinfo',
 	\		'readonly': 'LightlineReadonly',
 	\		'modified': 'LightlineModified',
-	\		'fugitive': 'LightlineFugitive'
+	\		'gitbranch': 'LightlineFugitive'
 	\ }, }
 function! MyFiletype()
-	return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . 
+	return winwidth(0) > 70 ? (strlen(&filetype) ?
 	\		WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 function! MyFileformat()
-	return winwidth(0) > 70 ? (&fileformat . ' ' . 
-	\		WebDevIconsGetFileFormatSymbol()) : ''
+	return winwidth(0) > 70 ? (WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 function! LightlineReadonly()  " For the status line
@@ -58,8 +57,8 @@ function! LightlineModified()
 endfunction
 
 function! LightlineFugitive()
-	if &ft !~? 'vimfiler' && exists('*fugitive#head')
-		let branch = fugitive#head()
+	if &ft !~? 'vimfiler' && exists('*FugitiveHead')
+		let branch = FugitiveHead()
 		return branch !=# '' ? ' '.branch : ''
 	endif
 	return ''
