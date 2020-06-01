@@ -105,6 +105,7 @@ hi SignifySignChange ctermfg=3
 autocmd BufNewFile,BufRead *.sage,*.spyx,*.pyx set filetype=python
 autocmd BufNewFile,BufRead *.feature setlocal expandtab
 autocmd BufNewFile,BufRead *.rasi set filetype=css
+autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy
 
 " Turn off line cursor and turn on spell check, linebreak for markdown
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
