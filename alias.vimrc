@@ -6,8 +6,10 @@ nnoremap <S-Right> :tabnext<return>
 " Can also use gT or <C-PageUp> and gt or <C-PageDown> for next and previous
 " tabs, respectively
 
+
 " Delete buffer but NOT the split
 cabbrev BD bn\|bd #
+
 
 " ALIAS! Set W (capital w), and ẅ (w with diaeresis) to also write
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
@@ -22,11 +24,14 @@ cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
 cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
 cabbrev octave_run !clear && octave -qf "run('%');"
 
+
 " Hit F3 to unhighlight searched term
 nnoremap <silent><F3> :noh<return>
 
+
 " Colorizer Toggle, REQUIRES Colorizer to be loaded!
 nnoremap <silent><F4> :ColorToggle<return>
+
 
 " Toggle RELATIVE line numbers on and off with Ctrl-K (upper or lower case)
 function! g:NumberToggle()
@@ -37,6 +42,7 @@ function! g:NumberToggle()
 	endif
 endfunction
 nnoremap <silent><C-K> :call g:NumberToggle()<return>
+
 
 " Toggle fold column appearence with <C-H> (for now)
 function! g:FoldToggle()
@@ -55,3 +61,25 @@ function! g:FoldToggle()
 endfunction
 nnoremap <silent><C-H> :call g:FoldToggle()<return>
 
+
+" Toggle list chars, numbers, and vim-signify gutter signs
+function! ChgListchars()
+	if &list ==# "nolist"
+		set list
+		let &showbreak = " \u21B3 "
+	else
+		set nolist
+		let &showbreak = ""
+	endif
+
+	if &number ==# "nonumber"
+		set number
+	else
+		set nonumber
+	endif
+
+	" Toggle Signify
+	SignifyToggle
+endfunction
+
+nnoremap <C-c> :call ChgListchars()<CR>
