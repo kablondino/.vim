@@ -24,6 +24,11 @@ cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
 cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
 cabbrev octave_run !clear && octave -qf "run('%');"
 
+" Alias to do linting on Python with flake8
+cnoreabbrev flake !clear && flake8 %
+
+" Alias to set wider width for Markdown files
+cnoreabbrev 100_width setlocal colorcolumn+=100 | setlocal textwidth=99
 
 " Hit F3 to unhighlight searched term
 nnoremap <silent><F3> :noh<return>
@@ -62,7 +67,7 @@ endfunction
 nnoremap <silent><C-H> :call g:FoldToggle()<return>
 
 
-" Toggle list chars, numbers, and vim-signify gutter signs
+" Toggle list chars, numbers, and vim-signify gutter signs, with <C-c>
 function! ChgListchars()
 	if &list ==# "nolist"
 		set list
