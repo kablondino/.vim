@@ -24,8 +24,12 @@ cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
 cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
 cabbrev octave_run !clear && octave -qf "run('%');"
 
-" Alias to do linting on Python with flake8
+" Alias to do linting on Python with flake8 - MAY BE DEPRECATED with ALE
 cnoreabbrev flake !clear && flake8 %
+
+nmap <silent> <C-j> <Plug>(ale_next)
+nmap <silent> <C-k> <Plug>(ale_previous)
+nmap <C-g> <Plug>(ale_toggle)
 
 " Alias to set wider width for Markdown files
 cnoreabbrev 100_width setlocal colorcolumn+=100 | setlocal textwidth=99
@@ -38,7 +42,7 @@ nnoremap <silent><F3> :noh<return>
 nnoremap <silent><F4> :ColorToggle<return>
 
 
-" Toggle RELATIVE line numbers on and off with Ctrl-K (upper or lower case)
+" Toggle RELATIVE line numbers on and off with Ctrl-n (upper or lower case)
 function! g:NumberToggle()
 	if &relativenumber == 0
 		set relativenumber
@@ -46,7 +50,7 @@ function! g:NumberToggle()
 		set norelativenumber
 	endif
 endfunction
-nnoremap <silent><C-K> :call g:NumberToggle()<return>
+nnoremap <silent><C-n> :call g:NumberToggle()<return>
 
 
 " Toggle fold column appearence with <C-H> (for now)
@@ -85,6 +89,10 @@ function! ChgListchars()
 
 	" Toggle Signify
 	SignifyToggle
+
+	" Toggle ALE
+	ALEToggleBuffer
 endfunction
 
-nnoremap <C-c> :call ChgListchars()<CR>
+nnoremap <silent><C-c> :call ChgListchars()<CR>
+
