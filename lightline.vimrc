@@ -3,7 +3,7 @@ let g:lightline = {
 	\ 'colorscheme': 'deus',
 	\ 'tabline': {
 	\	'left': [ ['bufferinfo'], ['buff_separator'], ['buffers'], ],
-	\	'right': [ ['close'], ],
+	\   'right': []
 	\ },
 	\ 'tabline_separator': { 'left': "\uE0BC", 'right': "\uE0BA" },
 	\ 'tabline_subseparator': { 'left': "\uE0BD", 'right': "\uE0BD"},
@@ -28,7 +28,7 @@ let g:lightline = {
 	\
 	\ 'component': {
 	\		'char_hex_value': '0x%B',
-	\		'filename': '%t',
+	\		'filename': '%f',
 	\		'lineinfo': "\uE0A1%2l│\uE0A3%-2v",
 	\		'buff_separator': '',
 	\		'big_separator': '      ',
