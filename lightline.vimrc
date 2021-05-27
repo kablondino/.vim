@@ -28,7 +28,7 @@ let g:lightline = {
 	\
 	\ 'component': {
 	\		'char_hex_value': '0x%B',
-	\		'filename': '%f',
+	\		'filename': '%t',
 	\		'lineinfo': "\uE0A1%2l│\uE0A3%-2v",
 	\		'buff_separator': '',
 	\		'big_separator': '      ',
@@ -65,9 +65,15 @@ function! LightlineFugitive()
 endfunction
 
 let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#enable_nerdfont = 0  " For use with nerdfont.vim
 let g:lightline#bufferline#modified = "\uF040"
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#read_only = "\uF023"
+let g:lightline#bufferline#more_buffers = "\uE0C6"
+let g:lightline#bufferline#unnamed = '[No Name]'
+let g:lightline#bufferline#shorten_path = 0
+let g:lightline#bufferline#smart_path = 0
+let g:lightline#bufferline#filename_modifier = ':.'  " Show path in buffer
 
 let g:lightline#bufferline#number_map = {
 \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
