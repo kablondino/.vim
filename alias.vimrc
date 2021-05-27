@@ -32,7 +32,8 @@ nmap <silent> <C-k> <Plug>(ale_previous)
 nmap <C-g> <Plug>(ale_toggle)
 
 " Alias to set wider width for Markdown files
-cnoreabbrev 100_width setlocal colorcolumn+=100 | setlocal textwidth=99
+cnoreabbrev 100_width setlocal colorcolumn+=100 \| setlocal textwidth=99
+cnoreabbrev 80_width setlocal colorcolumn+=80 \| setlocal textwidth=79
 
 " Hit F3 to unhighlight searched term
 nnoremap <silent><F3> :noh<return>
