@@ -109,7 +109,8 @@ autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy
 
 " Turn off line cursor and turn on spell check, linebreak for markdown
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
-			\ linebreak nocursorline nocursorcolumn
+			\ linebreak nocursorline nocursorcolumn colorcolumn=80,100
+			\ textwidth=99
 
 " Julia loading
 autocmd BufReadPre,BufFilePre *.jl :packadd julia-vim && set syn=julia
