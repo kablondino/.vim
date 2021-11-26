@@ -111,6 +111,8 @@ autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy
 autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ linebreak nocursorline nocursorcolumn colorcolumn=80,100
 			\ textwidth=99
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_folding_style_pythonic = 1
 
 " Julia loading
 autocmd BufReadPre,BufFilePre *.jl :packadd julia-vim && set syn=julia
