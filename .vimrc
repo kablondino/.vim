@@ -114,9 +114,11 @@ autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_folding_style_pythonic = 1
 
+" Vieb config file
+autocmd BufEnter,BufNewFile,BufRead viebrc setlocal syn=vim
+
 " Julia loading
 autocmd BufReadPre,BufFilePre *.jl :packadd julia-vim && set syn=julia
 
 " Jinja loading
 autocmd BufReadPre,BufFilePre *.jinja :packadd Vim-Jinja2-Syntax
-
