@@ -10,12 +10,17 @@ nnoremap <S-Right> :tabnext<return>
 " Delete buffer but NOT the split
 cabbrev BD bn\|bd #
 
+" Open help vertically
+cabbrev h vert h
+
 
 " ALIAS! Set W (capital w), and ẅ (w with diaeresis) to also write
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> ẅ ((getcmdtype() is# ':' && getcmdline() is# 'ẅ')?('w'):('ẅ'))
 cnoreabbrev <expr> Ẅ ((getcmdtype() is# ':' && getcmdline() is# 'Ẅ')?('w'):('Ẅ'))
 
+" Same with ë
+cnoreabbrev <expr> ë ((getcmdtype() is# ':' && getcmdline() is# 'ë')?('e'):('ë'))
 
 " Aliases for C, C++, and Fortran compiling, with no extra options sans -Wall
 cabbrev C_compile !clear && gcc -Wall % -o %:r_c -lm
@@ -24,12 +29,8 @@ cabbrev Fortran_compile !clear && gfortran -Wall % -o %:r_f
 cabbrev matlab_run !clear && matlab -nodisplay -nojvm -nosplash -batch "run('%'); exit;"
 cabbrev octave_run !clear && octave -qf "run('%');"
 
-" Alias to do linting on Python with flake8 - MAY BE DEPRECATED with ALE
+" Alias to do linting on Python with flake8
 cnoreabbrev flake !clear && flake8 %
-
-nmap <silent> <C-j> <Plug>(ale_next)
-nmap <silent> <C-k> <Plug>(ale_previous)
-nmap <C-g> <Plug>(ale_toggle)
 
 " Alias to set wider width for Markdown files
 cnoreabbrev 100_width setlocal colorcolumn+=100 \| setlocal textwidth=99
@@ -90,9 +91,6 @@ function! ChgListchars()
 
 	" Toggle Signify
 	SignifyToggle
-
-	" Toggle ALE
-	ALEToggleBuffer
 endfunction
 
 nnoremap <silent><C-c> :call ChgListchars()<CR>

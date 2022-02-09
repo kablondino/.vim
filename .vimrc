@@ -17,7 +17,7 @@
 set nocompatible  " Forces VIM, and not vi
 filetype plugin indent on
 
-"  FOR SECURITY, disable modelines
+" FOR SECURITY, disable modelines
 set modelines=0 nomodeline
 
 " Backspace by default does NOT delete already-written text.
