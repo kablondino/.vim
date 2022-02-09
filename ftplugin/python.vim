@@ -8,4 +8,3 @@ let g:python_recommended_style = 1
 
 " Python folding from SimpylFold, set preview for docstring
 let g:SimpylFold_docstring_preview = 1
-
