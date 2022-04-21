@@ -25,6 +25,13 @@ set mouse=nv  " Mouse is usable only in Normal and Visual mode
 set encoding=utf-8 fileencoding=utf-8
 set t_ZH=[3m t_ZR=[23m
 
+" Wildmenu, wrapped in 'if' for compatibility
+if has("wildmenu")
+	set wildignore+=*.swp
+	set wildmenu
+	set wildmode=full
+endif
+
 
 " ------------------------- Visual Things ------------------------------------
 " Choose one!
