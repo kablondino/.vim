@@ -35,3 +35,6 @@
 [submodule "pack/all_plugins/opt/Vim-Jinja2-Syntax"]
 	path = pack/all_plugins/opt/Vim-Jinja2-Syntax
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "pack/all_plugins/start/commentary"]
+	path = pack/all_plugins/start/commentary
+	url = https://tpope.io/vim/commentary.git
