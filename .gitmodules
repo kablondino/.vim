@@ -11,7 +11,7 @@
 	path = pack/all_plugins/opt/Colorizer
 	url = https://github.com/chrisbra/Colorizer
 [submodule "pack/all_plugins/opt/julia-vim"]
-	path = pack/all_plugins/opt/julia-vim
+	path = pack/all_plugins/start/julia-vim
 	url = https://github.com/JuliaEditorSupport/julia-vim
 [submodule "pack/all_plugins/start/vim-markdown"]
 	path = pack/all_plugins/start/vim-markdown
