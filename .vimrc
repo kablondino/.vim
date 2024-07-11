@@ -53,7 +53,7 @@ set colorcolumn=80  " Set the cursorline and cursorcolumn
 set lazyredraw ttyfast showcmd showfulltag
 set regexpengine=1
 set showmatch  " Show matching parenthesis, etc.
-set incsearch ignorecase smartcase  " Searching things
+set incsearch ignorecase smartcase shortmess-=S  " Searching things
 set foldenable foldmethod=manual
 
 set bg=dark
@@ -114,9 +114,6 @@ autocmd BufEnter,BufNewFile,BufRead *.md,*.MD setlocal spell spelllang=en
 			\ textwidth=99
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_folding_style_pythonic = 1
-
-" Vieb config file
-autocmd BufEnter,BufNewFile,BufRead viebrc setlocal syn=vim
 
 " Jinja loading
 autocmd BufReadPre,BufFilePre *.jinja,*.j2 :packadd Vim-Jinja2-Syntax
