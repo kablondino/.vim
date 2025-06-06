@@ -6,7 +6,7 @@
 "    ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 
 
-" ------------------------- Core ---------------------------------------------
+" ------------------------- Core ----------------------------------------------
 set nocompatible  " Forces VIM, and not vi
 filetype plugin indent on
 
@@ -33,7 +33,7 @@ if has("wildmenu")
 endif
 
 
-" ------------------------- Visual Things ------------------------------------
+" ------------------------- Visual Things -------------------------------------
 " Choose one!
 let line_choice = "lightline"  " Else vim-crystalline
 
@@ -83,11 +83,12 @@ endif
 " ↪ U+21AA, ↳ U+21B3
 
 
-" ------------------------- Alias and such -----------------------------------
+" ------------------------- Alias and such ------------------------------------
 source $HOME/.vim/alias.vimrc
 
 
-" ------------------------- Signify ------------------------------------------
+" ------------------------- Signify and Git -----------------------------------
+autocmd FileType gitcommit set colorcolumn+=73
 let g:signify_vcs_list = [ 'git' ]  " Look only for git
 
 let g:signify_realtime = 1
@@ -101,7 +102,7 @@ hi SignifySignDelete ctermfg=1
 hi SignifySignChange ctermfg=3
 
 
-" ------------------------- File Type Specification --------------------------
+" ------------------------- File Type Specification ---------------------------
 " Syntax for odd file types
 autocmd BufNewFile,BufRead *.sage,*.spyx,*.pyx set filetype=python
 autocmd BufNewFile,BufRead *.feature setlocal expandtab
